@@ -63,18 +63,18 @@ public class PlayerController : MonoBehaviour
         return y;
     }
 
-    public int ID;      //numer nadany przez skrypt Network  (wykrywanie najlepszych)
+    public int ID;      //numer nadany przez skrypt Network 
     public int score;   //fitness score
     //wykrywanie kolizji
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Wall"))  //smierć i przeslanie fitnesu do sieci
+        if (collision.CompareTag("Wall"))  
         {
             Destroy(gameObject);
             network.scores[ID] = score;
         }
 
-        if (collision.CompareTag("Checkpoint"))  //wzrost fitnesu
+        if (collision.CompareTag("Checkpoint")) 
         { 
             score++;
         }
